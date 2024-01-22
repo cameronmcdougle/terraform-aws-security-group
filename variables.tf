@@ -16,14 +16,38 @@ variable "description" {
   default     = "Security Group managed by Terraform"
 }
 
-variable "create_http_rule" {
+variable "create_http_ingress_rule" {
   description = "Whether to create http rule for security group"
   type        = bool
   default     = true
 }
 
-variable "create_https_rule" {
+variable "create_https_ingress_rule" {
   description = "Whether to create https rule for security group"
+  type        = bool
+  default     = true
+}
+
+variable "create_s3_endpoint_ingress_rule" {
+  description = "Whether to create s3 endpoint ingress rule for security group"
+  type        = bool
+  default     = true
+}
+
+variable "create_http_egress_rule" {
+  description = "Whether to create http rule for security group"
+  type        = bool
+  default     = true
+}
+
+variable "create_https_egress_rule" {
+  description = "Whether to create https rule for security group"
+  type        = bool
+  default     = true
+}
+
+variable "create_s3_endpoint_egress_rule" {
+  description = "Whether to create s3 endpoint egress rule for security group"
   type        = bool
   default     = true
 }
